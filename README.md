@@ -19,8 +19,12 @@ Mọi header file đều phải có #define guard. Format theo công thức **_<
 ví dụ file có đường dẫn /project/todolist/Classes/ui/button.h thì #define guard sẽ là:
 
 ```C++
-#ifndef TODOLIST_UI_BUTTON_H_
-#define TODOLIST_UI_BUTTON_H_
+#ifndef FOO_BAR_BAZ_H_
+#define FOO_BAR_BAZ_H_
+
+...
+
+#endif  // FOO_BAR_BAZ_H_
 ```
 
 ## Self-contained Headers and include what you use
@@ -31,7 +35,7 @@ Thứ tự include headers: Related header, C System Headers, C++ standard libra
 
 Ví dụ:
 
-File có đường dẫn foo/server/fooserver.cpp
+File có đường dẫn foo/server/fooserver.cpp
 
 ```C++
 //Đây là related header
