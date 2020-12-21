@@ -1,6 +1,11 @@
 # Style Guide
 
-Foobar is a Python library for dealing with word pluralization.
+Mục tiêu của style guide:
+
+1. Đủ để trả lời tất cả những câu hỏi thường gặp về cách viết code của dự án.
+2. Giúp cho người khác đọc code dễ hơn.
+3. Nền tảng để phát triển những dữ án lớn.
+4. Tối ưu tốc độ khi build
 
 ## Header Files
 
@@ -14,7 +19,7 @@ Sử dụng file .h đúng cách có thể giảm kích thước, tối ưu tố
 
 [Định nghĩa](https://en.wikipedia.org/wiki/Include_guard)
 
-Mọi header file đều phải có #define guard. Format theo công thức \_(Tên Project)\_(path)\_(File)\_H\_
+Mọi header file đều phải có #define guard. Format theo công thức \_(TÊN PROJECT)\_(PATH)\_(FILE)\_H\_
 
 ví dụ file có đường dẫn /project/todolist/Classes/ui/button.h thì #define guard sẽ là:
 
@@ -33,6 +38,8 @@ ví dụ file có đường dẫn /project/todolist/Classes/ui/button.h thì #de
 
 Thứ tự include headers: Related header, C System Headers, C++ standard library headers, Cocos2dx Headers, project's headers. Ngăn cách giữa các nhóm headers này bằng 1 blank line.
 
+
+
 Ví dụ:
 
 File có đường dẫn foo/server/fooserver.cpp
@@ -49,8 +56,27 @@ File có đường dẫn foo/server/fooserver.cpp
 #include <string>
 #include <vector>
 
+//Đây là Cocos headers
+#include "cocos2d.h"
+#include "ui/CocosGUI.h"
+
 //Đây là những file project's headers
 #include "base/basictypes.h"
 #include "base/commandlineflags.h"
 #include "foo/server/bar.h"
 ```
+
+Không sử dụng directory alias khi include.
+
+Ví dụ
+
+File có đường dẫn google-awesome-project/src/base/logging.h
+
+```C++
+#include "base/logging.h" // đúng
+
+#include "./base/logging.h" // sai
+
+#include "../base/logging.h" // sai
+```
+
