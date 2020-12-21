@@ -14,7 +14,7 @@ Sử dụng file .h đúng cách có thể giảm kích thước, tối ưu tố
 
 [Định nghĩa](https://en.wikipedia.org/wiki/Include_guard)
 
-Mọi header file đều phải có #define guard. Format theo công thức \_<Tên Project>\_<Path>\_<File>\_H\_
+Mọi header file đều phải có #define guard. Format theo công thức \_(Tên Project)\_(path)\_(File)\_H\_
 
 ví dụ file có đường dẫn /project/todolist/Classes/ui/button.h thì #define guard sẽ là:
 
